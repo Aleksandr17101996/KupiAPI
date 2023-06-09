@@ -3,6 +3,13 @@ class Base:
     VERSION = "v4/"
 
 
-class Currency:
-    CURRENCY_COM = ["USD", "EUR", "GBP", "AUD", "SGD", "CAD", "PLN", "AED"]
-    CURRENCY_RU = ["RUB", "USD", "KZT", "UAH", "UZS", "AZN", "KGS", "AMD"]
+class Locale:
+    CURRENCY = ["USD", "EUR", "GBP",
+                "AUD", "SGD", "CAD",
+                "PLN", "AED", "RUB",
+                "KZT", "UAH", "UZS",
+                "AZN", "KGS", "AMD"]
+
+    LANG = ["it", "de", "fr", "es", "pl", "nl", "en", "ru"]
+
+    COUNTRY = ["RU", "NL"]
