@@ -2,6 +2,7 @@ import random
 
 from api.account_api import Account
 from config import Locale
+from data.generator import generated_persone, generated_password
 
 
 class TestAccount(Account):
@@ -10,8 +11,9 @@ class TestAccount(Account):
     country = Locale.COUNTRY
 
     def test_post_sign_up_valid_user(self):
-        email = "poleshuk.alex@gmail.com"
-        password = "aaaAAA1"
+        person_info = next(generated_persone())
+        email = person_info.email
+        password = generated_password()
         lang = self.lang[random.randint(0, 7)]
         country = self.country[random.randint(0, 1)]
         currency = self.currency[random.randint(0, 14)]
@@ -19,3 +21,4 @@ class TestAccount(Account):
         assert status_code == 200, "Статус код не соответсвует ожидаемому"
         assert body["status"] == "success", "Статус в теле ответа не соответсвует"
         assert body["data"]["email"] == email, "Почта в теле ответа не соответсвует"
+        
