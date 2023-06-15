@@ -14,7 +14,8 @@ class TestAccount(Account):
 
     def test_post_sign_up_valid_user(self):
         person_info = next(generated_persone())
-        email = person_info.email
+        #email = person_info.email
+        email = "poleshuk.alex134@yandex.ru"
         password = generated_password()
         lang = self.lang[random.randint(0, 7)]
         country = self.country[random.randint(0, 1)]
